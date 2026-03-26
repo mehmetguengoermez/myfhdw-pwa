@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NOINDEX, NOFOLLOW"/>
+    <title>Prüfungstermine</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#21376a">
+    <link rel="apple-touch-icon" href="./img/homescreen192.png">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./styles/custom.css" type="text/css" media="all"/>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+
+    <style>
+        
+        .navbar-nav > li > a { line-height: 20px !important; }
+        .navbar { min-height: 50px !important; border: 1px solid transparent; margin-bottom: 20px; }
+
+        
+        .btn-tab-wrapper { text-align: right; margin-bottom: -1px; position: relative; z-index: 10; }
+        .btn-fake-tab {
+            display: inline-block; padding: 6px 12px; margin-bottom: 0;
+            font-size: 14px; font-weight: normal; line-height: 1.42857143;
+            text-align: center; white-space: nowrap; vertical-align: middle;
+            cursor: default; background-image: none; border: 1px solid #ccc;
+            border-bottom-color: transparent; border-radius: 4px 4px 0 0;
+            color: #333; background-color: #f5f5f5;
+        }
+
+        /* Tabellen Styling - Jede Prüfung ist eine Tabelle */
+        .exam-table {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            font-size: 13px;
+            border-collapse: collapse;
+        }
+
+        .exam-table th {
+            background-color: #fff;
+            color: #333;
+            font-weight: bold;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .exam-table td {
+            padding: 8px;
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            vertical-align: top;
+            color: #333;
+        }
+
+        /* Spaltenbreiten */
+        .w-col1 { width: 25%; }
+        .w-col2 { width: 13%; }
+        .w-col3 { width: 12%; }
+        .w-col4 { width: 15%; }
+        .w-col5 { width: 15%; }
+        .w-col6 { width: 10%; }
+        .w-col7 { width: 10%; }
+
+        /* Text Styles */
+        .exam-date-bold { font-weight: bold; color: #000; display: block; margin-bottom: 4px; }
+        .exam-title-blue { color: #21376a; font-size: 13px; display: block; }
+
+        /* Info Box */
+        .alert-info {
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+            color: #31708f;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body id="community-facelift">
+    <div id="container-spacer">
+        <div class="community-facelift header-logo-box">
+            <div class="container" style="overflow: hidden;">
+                <a title="Home" href="./dashboard.html">
+                    <img src="./img/Community_Banner.jpg" class="img-responsive" alt="page logo"/>
+                </a>
+            </div>
+        </div>
+
+        <nav role="navigation" id="top-navigation" class="navbar navbar-default community-facelift">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-id">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="./dashboard.html" class="navbar-brand">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-id">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./profile.html">Mein Profil</a></li>
+                        <li><a href="./timetable.html">Stundenplan</a></li>
+                        <li class="active"><a href="./pruefungstermine.html">Prüfungstermine</a></li>
+                        <li><a href="./notenuebersicht.html">Notenübersicht</a></li>
+                        <li><a href="./dokumente.html">Dokumente</a></li>
+                        <li><a href="./abgaben.html">Abgaben</a></li>
+                        <li><a href="./kurzbewerbung.html">Kurzbewerbung Master-Studium</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle dropdown-slim" data-toggle="dropdown">
+                        <span class="fa fa-user"></span> Mehmet Güngörmez <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="./index.html"><span class="fa fa-power-off"></span> Ausloggen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pull-left">
+                <div class="community-facelift btn-group btn-breadcrumb">
+                    <a class="btn btn-default" href="./dashboard.html">Startseite</a>
+                    <a class="btn btn-default" href="./pruefungstermine.html">Prüfungstermine</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="alert alert-info" role="alert">
+                Hier sehen Sie eine Liste Ihrer geplanten Prüfungen. Ihre Prüfungstermine finden Sie zudem immer in Ihrem Stundenplan.
+            </div>
+
+            <div class="btn-tab-wrapper">
+                <span class="btn-fake-tab">Angemeldete Prüfungen</span>
+            </div>
+
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th class="w-col1">Prüfung</th>
+                        <th class="w-col2">Datum & Zeit</th>
+                        <th class="w-col3">Zusatz</th>
+                        <th class="w-col4">Dozierende</th>
+                        <th class="w-col5">Beisitzende</th>
+                        <th class="w-col6">Raum</th>
+                        <th class="w-col7">Prüfungsform</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="exam-date-bold">25.02.2026 10:45 - 13:00 Uhr - noch 23 Tage</span>
+                            <span class="exam-title-blue">Praxisphase</span>
+                        </td>
+                        <td>25.02.2026<br>10:45 - 13:00</td>
+                        <td>BFWC423A</td>
+                        <td>Christian Soltenborn</td>
+                        <td>Christian Soltenborn</td>
+                        <td>B-D01</td>
+                        <td>Referat -<br>Praxisphase</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-date-bold">20.04.2026 11:00 - 12:30 Uhr - noch 77 Tage</span>
+                            <span class="exam-title-blue">IT-Compliance, Prozesse und Architekturen</span>
+                        </td>
+                        <td class="w-col2">20.04.2026<br>11:00 - 12:30</td>
+                        <td class="w-col3">BFWC423A,<br>MFWC423A</td>
+                        <td class="w-col4">Walter Speth</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">B-D01<br>B-D05</td>
+                        <td class="w-col7">Klausur</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-date-bold">24.04.2026 08:30 - 10:00 Uhr - noch 81 Tage</span>
+                            <span class="exam-title-blue">Wirtschaftsrecht</span>
+                        </td>
+                        <td class="w-col2">24.04.2026<br>08:30 - 10:00</td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Patrick Redell</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">B-D01<br>B-D05</td>
+                        <td class="w-col7">Klausur</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Advanced Topics in Computer Science</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Roland Pleger</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Referat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Entrepreneurship</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Ulrike Biedendieck</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Kombination von<br>Prüfungsformen</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Implementierung digitaler Geschäftsprozesse</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Joachim Bloemer</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Referat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Marketing</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Stefan Helmke</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Referat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Securing Digital Transformation</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A</td>
+                        <td class="w-col4">Walter Speth</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Referat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="exam-table">
+                <tbody>
+                    <tr>
+                        <td class="w-col1">
+                            <span class="exam-title-blue">Web Technologies and Applications</span>
+                        </td>
+                        <td class="w-col2"></td>
+                        <td class="w-col3">BFWC423A,<br>BFWS423A</td>
+                        <td class="w-col4">Patrick Kobsch</td>
+                        <td class="w-col5">Nicht zugeordnet</td>
+                        <td class="w-col6">Nicht zugeordnet</td>
+                        <td class="w-col7">Referat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="font-size: 12px; margin-top: 10px; color: #333;">
+                <b>1 - 9</b> von <b>9</b>, Ergebnisse pro Seite: <b>50</b> <span class="caret"></span>
+            </div>
+
+            <div style="height: 50px;"></div>
+        </div>
+    </div>
+
+    <footer class="community-facelift footer-bootstrap footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9"><p>Fachhochschule der Wirtschaft</p><p>Paderborn | Bergisch Gladbach | Bielefeld | Marburg | Mettmann</p></div>
+                <div class="col-xs-12 col-sm-3 text-right"><a href="#">Kontakt</a> &nbsp;&nbsp;&nbsp; <a href="#">Impressum</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="community-facelift footer-bootstrap-academyFive footer-meta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"><div id="academyFiveFooter" class="text-center"><a href="https://www.simovative.com" target="_blank">&copy; academyFIVE</a></div></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+
+        // Auto Logout
+        var inactivityTime = function () {
+            var time;
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.onclick = resetTimer;
+            document.ontouchstart = resetTimer;
+
+            function logout() {
+                window.location.href = './index.html';
+            }
+
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(logout, 180000);
+            }
+        };
+        inactivityTime();
+    </script>
+</body>
+</html>
