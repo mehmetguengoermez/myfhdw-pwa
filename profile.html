@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NOINDEX, NOFOLLOW"/>
+    <title>Mein Profil</title>
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#21376a">
+    <link rel="apple-touch-icon" href="./img/homescreen192.png">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./styles/custom.css" type="text/css" media="all"/>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+
+    <style>
+    .submission-chat-list-wrapper { display: none !important; }
+    .submission-chat-spinner { display: none !important; }
+    .submission-chat-list { display: none !important; }
+    #submission-chat-form { display: none !important; }
+    .pruefungsergebnisse-banner { border: 2px solid #ddd; margin-bottom: 15px; }
+    .pruefungsergebnisse-banner div { padding-top: 5px; padding-bottom: 5px; }
+    .media-body > div:nth-child(1) { font-size: 18px; color: #21376a; }
+    .date_container .date_info { padding-bottom: 50px !important; }
+    .date_info { border-left: 0px !important; border-top: 0px !important; border-bottom: 1px black solid !important; }
+    </style>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body id="community-facelift">
+    <div id="container-spacer">
+        <div class="community-facelift header-logo-box">
+            <div class="container" style="overflow: hidden;">
+                <a title="Home" href="./dashboard.html">
+                    <img src="./img/Community_Banner.jpg" class="img-responsive" alt="page logo"/>
+                </a>
+            </div>
+        </div>
+
+        <nav role="navigation" id="top-navigation" class="navbar navbar-default community-facelift">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-id-5ddff3db0f75d">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="./dashboard.html" class="navbar-brand">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-id-5ddff3db0f75d">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./profile.html">Mein Profil</a></li>
+                        <li><a href="./timetable.html">Stundenplan</a></li>
+                        <li><a href="./pruefungstermine.html">Prüfungstermine</a></li>
+                        <li><a href="./notenuebersicht.html">Notenübersicht</a></li>
+                        <li><a href="./dokumente.html">Dokumente</a></li>
+                        <li><a href="./abgaben.html">Abgaben</a></li>
+                        <li><a href="./kurzbewerbung.html">Kurzbewerbung Master-Studium</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="container" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class="pull-right">
+                <div style="display: block;">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle dropdown-slim" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user"></span>
+                             Mehmet Güngörmez
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu ">
+                            <li role="presentation">
+                                <a role="menuitem" href="#">
+                                    <span class="glyphicon glyphicon-lock"></span> Passwort ändern
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" href="./index.html">
+                                    <span class="fa fa-power-off"></span> Ausloggen
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pull-left">
+                <div class="community-facelift btn-group btn-breadcrumb">
+                    <a class="btn btn-default" href="./dashboard.html">Startseite</a>
+                    <a class="btn btn-default" href="./profile.html">Mein Profil</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <p>&nbsp;</p>
+            <p><strong>Die angegebenen Daten werden u.a. f&uuml;r die Erstellung von offiziellen Bescheinigungen verwendet und das Bild bspw. f&uuml;r Ihren Studierendenausweis. Bitte bedenken Sie dies, wenn Sie hier &Auml;nderungen vornehmen.</strong></p>
+            <p><strong>Die &Auml;nderung Ihres Passworts ist nicht &uuml;ber dieses Portal m&ouml;glich.</strong></p>
+            <p>&nbsp;</p>
+
+            <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                    <div id="sticky-profile" class="panel panel-default">
+                        <div class="panel-body">
+                            <div>
+                                <img src="./img/team.png" alt="Mehmet Güngörmez" style="display: block; width: 100%; max-width: 300px; height: auto;" class="img-thumbnail center-block">
+
+                                <label style="font-weight: bold; margin-top: 10px;" id="profile-name" class="text-center center-block">Mehmet Güngörmez</label>
+                                <div class="btn-group navbar-btn btn-group-vertical center-block">
+                                    <button class="btn btn-default">
+                                        <span class="glyphicon glyphicon-camera"></span> Foto hochladen
+                                    </button>
+                                    <a href="#" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-remove"></span> Foto löschen
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a href="#" class="pull-right">
+                                <span class="fa fa-pencil"></span> Bearbeiten
+                            </a>
+                            Profil Daten
+                        </div>
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-4">Matrikelnummer(n)</td>
+                                    <td class="col-xs-8">777777</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-4">E-Mail</td>
+                                    <td class="col-xs-8">mehmet.guengoermez@edu.fhdw.de</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-4">Telefon</td>
+                                    <td class="col-xs-8"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-4">Handy</td>
+                                    <td class="col-xs-8"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-4">Adresse</td>
+                                    <td class="col-xs-8">
+                                        Burj Khalifa – 1<br>
+                                        Downtown Dubai
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="community-facelift footer-bootstrap footer-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                    <p>Fachhochschule der Wirtschaft</p>
+                    <p>Paderborn | Bergisch Gladbach | Bielefeld | Marburg | Mettmann</p>
+                </div>
+                <div class="col-xs-12 col-sm-3 text-right">
+                    <a href="#">Kontakt</a> &nbsp;&nbsp;&nbsp; <a href="#">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="community-facelift footer-bootstrap-academyFive footer-meta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="academyFiveFooter" class="text-center">
+                        <a href="https://www.simovative.com" target="_blank">&copy; academyFIVE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                    console.log('ServiceWorker registriert');
+                }, function(err) {
+                    console.log('ServiceWorker Fehler: ', err);
+                });
+
+                var inactivityTime = function () {
+                    var time;
+                    window.onload = resetTimer;
+                    document.onmousemove = resetTimer;
+                    document.onkeypress = resetTimer;
+                    document.onclick = resetTimer;
+
+                    function logout() {
+                        window.location.href = 'index.html';
+                    }
+
+                    function resetTimer() {
+                        clearTimeout(time);
+                        time = setTimeout(logout, 180000);
+                    }
+                };
+                inactivityTime();
+            });
+        }
+    </script>
+</body>
+</html>
