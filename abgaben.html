@@ -88,7 +88,7 @@
 
     <script>
         $(document).ready(function() {
-            // Service Worker beim Laden registrieren (GENAU WIE IM DASHBOARD)
+            // Service Worker 
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('./sw.js');
             }
@@ -123,11 +123,11 @@
                         };
 
                         if (reg) {
-                            // Der Weg über den Service Worker
+                            
                             reg.showNotification('Bewertung erfolgreich!', options)
                                .catch(function(err) { console.log("Fehler SW Notification", err); });
                         } else {
-                            // Fallback, falls reg null ist
+                            
                             try {
                                 new Notification('Bewertung erfolgreich!', options);
                             } catch(e) { console.log("Fehler Fallback", e); }
